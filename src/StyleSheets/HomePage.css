@@ -1,0 +1,124 @@
+/*Root settings*/
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #fdfbfb, #c8eafa);
+    -fx-font-family: "Segoe UI", "AppleGothic", "Verdana", sans-serif;
+}
+
+.split-pane {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.split-pane *.split-pane-divider {
+    -fx-background-color: #ffff;
+}
+
+/*Top Section*/
+#HomePageBox {
+    -fx-padding: 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.05), 30, 0, 0, 15);
+}
+
+/*Title*/
+.Title {
+    -fx-font-size: 4em;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: #2a288f;
+    -fx-padding: 10 0 30 0;
+}
+
+/*Sell Insurance Boxes*/
+.InsuranceBox {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 20;
+    -fx-padding: 15;
+    -fx-border-width: 1.5;
+    -fx-border-color: #8bc5ff;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.02), 10, 0, 0, 4);
+    -fx-transition: 0.3s;
+}
+
+/*Sell Insurance Boxes Hover*/
+.InsuranceBox:hover {
+    -fx-border-color: #4f46e5;
+    -fx-effect: dropshadow(three-pass-box, rgba(79, 70, 229, 0.12), 15, 0, 0, 8);
+}
+
+/*Sell Insurance Boxes sub titles*/
+.InsuranceSubTitle {
+    -fx-font-size: 1.3em;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #454343;
+}
+
+/*Button style*/
+.Button {
+    -fx-background-color: #4f46e5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 1em;
+    -fx-background-radius: 15;
+    -fx-padding: 10 30;
+    -fx-cursor: hand;
+    -fx-transition: 0.3s;
+    -fx-min-height: 35;
+    -fx-min-width: 180;
+    -fx-max-height: 45;
+    -fx-max-width: 250;
+}
+
+.Button:hover {
+    -fx-background-color: #4338ca;
+    -fx-effect: dropshadow(three-pass-box, rgba(67, 56, 202, 0.4), 10, 0, 0, 4);
+}
+
+/*View all purchases style*/
+#PurchasesButton {
+    -fx-background-color: #059669;
+    -fx-font-size: 1.3em;
+    -fx-max-width: 500;
+    -fx-min-width: 300;
+    -fx-padding: 15 65;
+    -fx-background-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(5, 150, 105, 0.3), 15, 0, 0, 6);
+}
+
+#PurchasesButton:hover {
+    -fx-background-color: #10b981;
+}
+
+/*Config Text*/
+
+#ConfigurationText {
+    -fx-font-family: "Consolas", "Monospaced";
+    -fx-font-size: 1.3em;
+    -fx-text-fill: #64748b;
+    -fx-padding: 15;
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 15;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+}
+
+.Icon {
+    -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+#CarIcon {
+    -fx-image: url("../Images/HomePage/Car.png");
+}
+
+#AptIcon {
+    -fx-image: url("../Images/HomePage/Appart.png");
+}
+
+#LifeIcon {
+    -fx-image: url("../Images/HomePage/Life.png");
+}
+
+#HealthIcon {
+    -fx-image: url("../Images/HomePage/HealthCare.png");
+}
