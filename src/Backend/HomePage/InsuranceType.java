@@ -16,7 +16,7 @@ public enum InsuranceType {
             case HEALTH:
                 return "Health Insurance";
             case APARTMENT:
-                return "APARTMENT Insurance";
+                return "Apartment Insurance";
             default:
                 return "Not Found";
         }
