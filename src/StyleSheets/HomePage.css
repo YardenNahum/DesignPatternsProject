@@ -122,3 +122,16 @@
 #HealthIcon {
     -fx-image: url("../Images/HomePage/HealthCare.png");
 }
+
+
+.alert-success {
+    -fx-background-color: #dcfce7;
+    -fx-text-fill: #166534;
+    -fx-border-color: #bbf7d0;
+}
+
+.alert-error {
+    -fx-background-color: #fee2e2;
+    -fx-text-fill: #991b1b;
+    -fx-border-color: #fecaca;
+}
