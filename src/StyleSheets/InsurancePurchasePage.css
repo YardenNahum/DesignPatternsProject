@@ -65,7 +65,7 @@
 #FormTitle {
     -fx-font-family: "Segoe UI", sans-serif;
     -fx-font-weight: bold;
-    -fx-font-size: 20px;
+    -fx-font-size: 2em;
     -fx-text-fill: #3d3797;
 }
 
