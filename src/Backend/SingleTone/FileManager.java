@@ -15,7 +15,7 @@ public class FileManager {
 
     // class constructor
     private FileManager() {
-        this.file = new File("purchases.txt");
+        this.file = new File("FormInput.txt");
         System.out.println("FileManager constructor was called");
     }
 
