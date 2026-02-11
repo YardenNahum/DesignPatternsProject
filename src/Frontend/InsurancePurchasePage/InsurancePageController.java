@@ -25,6 +25,7 @@ public class InsurancePageController {
     @FXML private TextArea RemarksInput;
     @FXML private Label AlertText;
 
+    //sets insurance type to show the title and purchase
     public void setInsuranceType(InsuranceType insuranceType)
     {
         this.insuranceType = insuranceType;
@@ -33,10 +34,14 @@ public class InsurancePageController {
         }
     }
 
+    /**
+     * saves the purchase and logs it
+     *
+     * **/
     @FXML
     public void HandleSaveForm(MouseEvent mouseEvent) {
         //check for missing Input
-        if (NameInput.getText().isEmpty() || FamilyNameInput.getText().isEmpty() || DateInput.getValue()==null||isValidDateFormat(DateInput.getValue()))
+        if (validateFields())
         {
             showAlert("Error: Please fill in all required fields!", "alert-error");
         }
@@ -45,6 +50,19 @@ public class InsurancePageController {
             showAlert("Success! Your " + insuranceType + " policy has been saved.", "alert-success");
             HandleRefreshForm(mouseEvent);
         }
+    }
+
+    /**
+     * Validate the fields of the form
+     * returns true if the user filled all otherwise false
+     * **/
+    private boolean validateFields()
+    {
+        if(NameInput.getText().isEmpty() || FamilyNameInput.getText().isEmpty() || DateInput.getValue()==null||isValidDateFormat(DateInput.getValue()))
+        {
+            return false;
+        }
+        return true;
     }
 
     private void showAlert(String message, String styleClass) {

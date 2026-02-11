@@ -11,24 +11,6 @@
     -fx-text-fill: #334155;
 }
 
-.InputField {
-    -fx-background-color: #f8fafc;
-    -fx-background-radius: 10;
-    -fx-border-color: #e2e8f0;
-    -fx-border-width: 1.5;
-    -fx-border-radius: 10;
-    -fx-padding: 10 15;
-    -fx-font-family: "Segoe UI", sans-serif;
-    -fx-font-size: 15px;
-    -fx-text-fill: #1e293b;
-    -fx-prompt-text-fill: #94a3b8;
-}
-
-.InputField:focused {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #4f46e5;
-    -fx-effect: dropshadow(three-pass-box, rgba(79, 70, 229, 0.1), 10, 0, 0, 0);
-}
 
 .text-area {
     -fx-background-radius: 10;
