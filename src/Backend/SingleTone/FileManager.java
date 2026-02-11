@@ -1,8 +1,11 @@
 package Backend.SingleTone;
 
+import Backend.Purchases.PurchasesTable;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +18,7 @@ public class FileManager {
 
     // class constructor
     private FileManager() {
-        this.file = new File("purchases.txt");
+        this.file = new File("FormInput.txt");
         System.out.println("FileManager constructor was called");
     }
 
@@ -53,4 +56,27 @@ public class FileManager {
             throw new RuntimeException("Failed to read file: " + file.getName(), e);
         }
     }
+
+    // View All Purchases in the PurchasesTable
+    public List<PurchasesTable> addToPurchasesTable() {
+
+        List<String> lines = readFile();  // read all text from the file
+        List<PurchasesTable> tableRows = new ArrayList<>();
+
+        for (String line : lines) {
+
+            //split the table details: name,familyName,date,remarks,insuranceType
+            String[] tableColumns = line.split(",", -1);
+
+            String name = tableColumns[0].trim();
+            String familyName = tableColumns[1].trim();
+            String date = tableColumns[2].trim();
+            String remarks = tableColumns[3].trim();
+
+            tableRows.add(new PurchasesTable(name, familyName, date, remarks));
+        }
+
+        return tableRows;
+    }
+
 }

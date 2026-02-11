@@ -2,6 +2,8 @@ package Frontend.InsurancePurchasePage;
 
 
 import Backend.HomePage.InsuranceType;
+import Backend.SingleTone.FileManager;
+
 import Frontend.Utils.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -40,8 +42,16 @@ public class InsurancePageController {
         {
             showAlert("Error: Please fill in all required fields!", "alert-error");
         }
+        //Add the form input to the file using SingleTone
         else
         {
+            String FormInput = NameInput.getText() + ", " +
+                    FamilyNameInput.getText() + ", " +
+                    DateInput.getValue().toString() + ", " +
+                    RemarksInput.getText() + ", " +
+                    insuranceType;
+            FileManager.getInstance().AddToFile(FormInput);
+
             showAlert("Success! Your " + insuranceType + " policy has been saved.", "alert-success");
             HandleRefreshForm(mouseEvent);
         }
