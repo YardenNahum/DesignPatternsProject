@@ -93,14 +93,16 @@
 
 #ConfigurationText {
     -fx-font-family: "Consolas", "Monospaced";
-    -fx-font-size: 1.3em;
+    -fx-font-size: 1em;
     -fx-text-fill: #64748b;
+    -fx-wrap-text: true;
     -fx-padding: 15;
     -fx-background-color: #f8fafc;
     -fx-background-radius: 15;
     -fx-border-color: #e2e8f0;
     -fx-border-width: 1;
     -fx-border-radius: 15;
+    -fx-alignment: TOP_LEFT;
 }
 
 .Icon {

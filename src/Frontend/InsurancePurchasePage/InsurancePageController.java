@@ -1,6 +1,7 @@
 package Frontend.InsurancePurchasePage;
 
 
+import Backend.Builder.InsuranceDetails;
 import Backend.HomePage.InsuranceType;
 import Backend.SingleTone.FileManager;
 
@@ -10,8 +11,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.ContextMenuEvent;
-import javafx.scene.input.InputEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.time.LocalDate;
@@ -50,13 +49,14 @@ public class InsurancePageController {
         //Add the form input to the file using SingleTone
         else
         {
-            String FormInput = NameInput.getText() + ", " +
-                    FamilyNameInput.getText() + ", " +
-                    DateInput.getValue().toString() + ", " +
-                    RemarksInput.getText() + ", " +
-                    insuranceType;
-            FileManager.getInstance().AddToFile(FormInput);
-
+            InsuranceDetails insurance = new InsuranceDetails.Builder()
+                    .name(NameInput.getText())
+                    .familyName(FamilyNameInput.getText())
+                    .date(DateInput.getValue().toString())
+                    .remarks(RemarksInput.getText())
+                    .insuranceType(this.insuranceType) // שימוש ב-Enum הקיים בקונטרולר
+                    .build();
+            FileManager.getInstance().writeToLogger(insurance.toString());
             showAlert("Success! Your " + insuranceType + " policy has been saved.", "alert-success");
             HandleRefreshForm(mouseEvent);
         }

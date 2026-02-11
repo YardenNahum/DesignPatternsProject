@@ -1,18 +1,22 @@
 package Frontend.HomePage;
 
 import Backend.HomePage.InsuranceType;
+import Backend.SingleTone.FileManager;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HomePageController extends Application {
+    @FXML
+    private Label ConfigText;
     private String sellPagePath = "/Frontend/InsurancePurchasePage/InsurancePage.fxml";
     @Override
     public void start(Stage stage) {
@@ -30,7 +34,19 @@ public class HomePageController extends Application {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void initialize() {
+        try {
+            String config = FileManager.getInstance().readConfigFile();
+            if (ConfigText != null) {
+                ConfigText.setText(config);
+            }
+            System.out.println("Config loaded successfully: " + config);
 
+        } catch (Exception e) {
+            System.err.println("Failed to load config: " + e.getMessage());
+        }
+    }
     @FXML
     private void handleCarInsurance(MouseEvent event) {
         String title = " Purchase - " + InsuranceType.CAR.toString();

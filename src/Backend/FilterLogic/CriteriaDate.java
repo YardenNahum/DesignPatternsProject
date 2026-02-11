@@ -3,13 +3,12 @@ package Backend.FilterLogic;
 import Backend.Builder.InsuranceDetails;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class CriteriaFirstName implements Criteria
+public class CriteriaDate implements Criteria
 {
     private String searchText;
 
-    public CriteriaFirstName(String searchText) {
+    public CriteriaDate(String searchText) {
         this.searchText = searchText.toLowerCase();
     }
 
@@ -20,11 +19,11 @@ public class CriteriaFirstName implements Criteria
             return purchases;
 
         }
-        //Search for all the purchases that contains the search text in their first name field
+        //Search for all the purchases that contains the search text in their Date field
 
         for(InsuranceDetails purchase: purchases)
         {
-            if(purchase.getName().toLowerCase().contains(searchText))
+            if(purchase.getDate().contains(searchText))
             {
                 purchasesResult.add(purchase);
             }

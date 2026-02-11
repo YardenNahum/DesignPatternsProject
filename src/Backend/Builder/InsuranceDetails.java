@@ -78,5 +78,10 @@ public class InsuranceDetails {
             }
             return new InsuranceDetails(this);
         }
+        // building record for logger
+        public String toString() {
+            return String.format("name: %s, FamilyName: %s, Date: %s, InsuranceType: %s, remarks: %s",
+                    name, familyName, date, insuranceType, remarks);
+        }
     }
 }
