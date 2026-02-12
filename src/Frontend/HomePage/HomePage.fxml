@@ -13,24 +13,24 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" stylesheets="@../../StyleSheets/HomePage.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.HomePage.HomePageController">
    <children>
-      <SplitPane dividerPositions="0.6886666666666666" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.6953333333333334" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="396.0" prefWidth="800.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="412.0" prefWidth="800.0">
                <children>
-                  <VBox id="HomePageBox" alignment="CENTER" prefHeight="394.0" prefWidth="800.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox id="HomePageBox" alignment="CENTER" prefHeight="394.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="74.0" prefWidth="750.0" styleClass="Title" text="Insurance Company" textAlignment="CENTER" textFill="#998d3f">
+                        <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="71.0" prefWidth="750.0" styleClass="Title" text="Insurance Company" textAlignment="CENTER" textFill="#998d3f">
                            <font>
                               <Font name="Segoe UI Bold" size="28.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="10.0" top="10.0" />
+                              <Insets bottom="5.0" top="5.0" />
                            </VBox.margin>
                         </Label>
 
                         <Region VBox.vgrow="ALWAYS" />
 
-                        <HBox alignment="CENTER" spacing="60.0" VBox.vgrow="SOMETIMES">
+                        <HBox alignment="CENTER" prefHeight="164.0" prefWidth="750.0" spacing="60.0" VBox.vgrow="SOMETIMES">
                            <children>
                               <VBox id="CarBox" alignment="CENTER" maxWidth="500.0" prefHeight="150.0" prefWidth="320.0" styleClass="InsuranceBox" HBox.hgrow="ALWAYS">
                                  <children>
@@ -66,7 +66,7 @@
                            </padding>
                         </HBox>
 
-                        <HBox alignment="CENTER" spacing="60.0" VBox.vgrow="SOMETIMES">
+                        <HBox alignment="CENTER" prefHeight="123.0" prefWidth="750.0" spacing="60.0" VBox.vgrow="SOMETIMES">
                            <children>
                               <VBox id="LifeBox" alignment="CENTER" maxWidth="500.0" prefHeight="150.0" prefWidth="320.0" styleClass="InsuranceBox" HBox.hgrow="ALWAYS">
                                  <children>
@@ -107,20 +107,19 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane id="Footer" minHeight="150.0">
+            <AnchorPane id="Footer" minHeight="200.0">
                <children>
-                  <VBox alignment="TOP_CENTER" layoutY="2.4" prefHeight="164.0" prefWidth="800.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="2.0">
+                  <VBox alignment="CENTER" layoutY="15.2" prefHeight="180.0" prefWidth="800.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
                      <children>
-                        <Button id="PurchasesButton" mnemonicParsing="false" onMouseClicked="#handleViewALLPurchases" prefHeight="50.0" prefWidth="350.0" text="View All Purchases" styleClass="Button" />
+                        <VBox alignment="CENTER" maxWidth="760.0" prefHeight="55.0" prefWidth="760.0">
+                        <Button id="PurchasesButton" mnemonicParsing="false" onMouseClicked="#handleViewALLPurchases" prefHeight="80.0" prefWidth="350.0" styleClass="Button" text="View All Purchases" />
+                        </VBox>
                         <VBox alignment="CENTER" maxWidth="760.0">
                            <children>
-                              <Label id="ConfigurationText" fx:id="ConfigText" alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" minHeight="60.0" prefHeight="-1" prefWidth="762.0" text="Loading configuration..." wrapText="true" />
+                              <Label id="ConfigurationText" fx:id="ConfigText" alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" minHeight="115.0" prefHeight="-1" prefWidth="762.0" text="Loading configuration..." wrapText="true" />
                            </children>
                         </VBox>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="5.0" />
-                     </padding>
                   </VBox>
                </children>
             </AnchorPane>

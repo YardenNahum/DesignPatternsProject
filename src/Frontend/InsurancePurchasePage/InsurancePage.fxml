@@ -66,6 +66,11 @@
                   <Button id="SaveBtn" fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#HandleSaveForm" prefHeight="50.0" prefWidth="150.0" styleClass="Button" text="Save Form" />
                </children>
             </HBox>
+            <VBox alignment="CENTER" maxWidth="760.0">
+               <children>
+                  <Label id="ConfigurationText" fx:id="ConfigText" alignment="TOP_LEFT" maxWidth="1.7976931348623157E308" minHeight="115.0" prefHeight="-1" prefWidth="762.0" text="Loading configuration..." wrapText="true" />
+               </children>
+            </VBox>
          </children>
       </VBox>
    </children>

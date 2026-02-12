@@ -2,3 +2,7 @@ name=yarden, familyName='nahum', date='2026-02-12', remarks='Loves Red Cars',  i
 name=Adan, familyName='Ibrahim', date='2026-02-10', remarks='22 old',  insuranceType='Life Insurance.
 name=yarden, familyName='nahum', date='2026-02-11', remarks='Red car',  insuranceType='Car Insurance.
 name=Adan, familyName='Ibrahim', date='2026-02-12', remarks='LA',  insuranceType='Apartment Insurance.
+name=Yarden, familyName='Nahum', date='2026-02-12', remarks='red cars',  insuranceType='Life Insurance.
+name=Adan, familyName='Ibrahim', date='2026-02-18', remarks='adan',  insuranceType='Health Insurance.
+name=Omri, familyName='Spitzer', date='2026-02-05', remarks='dsads',  insuranceType='Life Insurance.
+name=yarden, familyName='nahum', date='2026-02-11', remarks='fsdfs',  insuranceType='Car Insurance.

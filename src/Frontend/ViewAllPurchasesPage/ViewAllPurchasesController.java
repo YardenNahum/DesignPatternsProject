@@ -4,6 +4,7 @@ import Backend.Builder.InsuranceDetails;
 import Backend.FilterLogic.CriteriaType;
 import Backend.FilterLogic.PurchaseFilter;
 import Backend.ObserverLogic.PurchaseConcreteObserver;
+import Backend.SingleTone.FileManager;
 import Frontend.HomePage.HomePageController;
 import Frontend.Utils.Utils;
 import javafx.collections.FXCollections;
@@ -23,12 +24,14 @@ public class ViewAllPurchasesController {
     @FXML private Button SearchBtn;
     @FXML private ComboBox<CriteriaType> searchCriteriaCombo;
     @FXML private TextField searchField;
+    @FXML private Label ConfigText;
 
     private PurchaseConcreteObserver observer;
 
     @FXML
     public void initialize()
     {
+        setConfig();
         //Subscribe to observer
         this.observer = HomePageController.getPurchaseObserver();
         if (this.observer != null)
@@ -50,6 +53,21 @@ public class ViewAllPurchasesController {
         colLastName.setCellValueFactory(new PropertyValueFactory<>("FamilyName"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("Date"));
         celRemarks.setCellValueFactory(new PropertyValueFactory<>("Remarks"));
+    }
+    //set Config text
+    private void setConfig()
+    {
+        try {
+            String config = FileManager.getInstance().readConfigFile();
+            if (ConfigText != null) {
+                ConfigText.setText(config);
+            }
+            System.out.println("Config loaded successfully: " + config);
+
+        } catch (Exception e) {
+            System.err.println("Failed to load config: " + e.getMessage());
+        }
+
     }
 
     //Navigate to home Page

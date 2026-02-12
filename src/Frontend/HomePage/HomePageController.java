@@ -18,8 +18,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class HomePageController extends Application {
-    @FXML
-    private Label ConfigText;
+    @FXML private Label ConfigText;
     private static PurchaseConcreteObserver PurchaseObserver;
 
     @Override
@@ -43,6 +42,12 @@ public class HomePageController extends Application {
     }
     @FXML
     public void initialize() {
+        setConfig();
+    }
+
+    //set Config text
+    private void setConfig()
+    {
         try {
             String config = FileManager.getInstance().readConfigFile();
             if (ConfigText != null) {
@@ -53,6 +58,7 @@ public class HomePageController extends Application {
         } catch (Exception e) {
             System.err.println("Failed to load config: " + e.getMessage());
         }
+
     }
     @FXML
     private void handleCarInsurance(MouseEvent event) {

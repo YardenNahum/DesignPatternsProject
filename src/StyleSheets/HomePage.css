@@ -21,7 +21,7 @@
 
 /*Title*/
 .Title {
-    -fx-font-size: 3em;
+    -fx-font-size: 2.5em;
     -fx-font-weight: bold;
     -fx-font-family: "Segoe UI Black";
     -fx-text-fill: #2a288f;
@@ -107,7 +107,6 @@
     -fx-border-radius: 15;
     -fx-alignment: TOP_LEFT;
 }
-
 .Icon {
     -fx-effect: dropshadow(two-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
 }

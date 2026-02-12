@@ -26,6 +26,7 @@ public class InsurancePageController {
     @FXML private DatePicker DateInput;
     @FXML private TextArea RemarksInput;
     @FXML private Label AlertText;
+    @FXML private Label ConfigText;
 
     //sets insurance type to show the title and purchase
     public void setInsuranceType(InsuranceType insuranceType)
@@ -34,6 +35,27 @@ public class InsurancePageController {
         if (FormTitle != null && insuranceType != null) {
             FormTitle.setText("Purchase - " + insuranceType.toString());
         }
+    }
+
+    @FXML
+    public void initialize() {
+        setConfig();
+    }
+
+    //set Config text
+    private void setConfig()
+    {
+        try {
+            String config = FileManager.getInstance().readConfigFile();
+            if (ConfigText != null) {
+                ConfigText.setText(config);
+            }
+            System.out.println("Config loaded successfully: " + config);
+
+        } catch (Exception e) {
+            System.err.println("Failed to load config: " + e.getMessage());
+        }
+
     }
 
     /**
