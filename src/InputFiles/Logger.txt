@@ -6,3 +6,8 @@ name=Yarden, familyName='Nahum', date='2026-02-12', remarks='red cars',  insuran
 name=Adan, familyName='Ibrahim', date='2026-02-18', remarks='adan',  insuranceType='Health Insurance.
 name=Omri, familyName='Spitzer', date='2026-02-05', remarks='dsads',  insuranceType='Life Insurance.
 name=yarden, familyName='nahum', date='2026-02-11', remarks='fsdfs',  insuranceType='Car Insurance.
+name=omri, familyName='spitzer', date='2026-02-12', remarks='Apartement in Tel Aviv',  insuranceType='Apartment Insurance.
+name=Yarden, familyName='Nahum', date='2025-02-05', remarks='Sick',  insuranceType='Health Insurance.
+name=Yarden, familyName='Nahum', date='2026-02-11', remarks='remarks',  insuranceType='Car Insurance.
+name=Adan, familyName='Ibrahim', date='2026-02-05', remarks='fdsfds',  insuranceType='Life Insurance.
+name=omri, familyName='spitzer', date='2026-02-19', remarks='fdfds',  insuranceType='Life Insurance.
