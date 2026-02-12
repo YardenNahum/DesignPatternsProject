@@ -77,9 +77,12 @@
 /*View all purchases style*/
 #PurchasesButton {
     -fx-background-color: #059669;
-    -fx-font-size: 1.3em;
+    -fx-font-size: 1em;
     -fx-max-width: 500;
     -fx-min-width: 300;
+    -fx-max-height: 500;
+    -fx-min-height: 30;
+    -fx-text-fill: white;
     -fx-padding: 15 65;
     -fx-background-radius: 15;
     -fx-effect: dropshadow(three-pass-box, rgba(5, 150, 105, 0.3), 15, 0, 0, 6);
@@ -123,19 +126,6 @@
 
 #HealthIcon {
     -fx-image: url("../Images/HomePage/HealthCare.png");
-}
-
-
-.alert-success {
-    -fx-background-color: #dcfce7;
-    -fx-text-fill: #166534;
-    -fx-border-color: #bbf7d0;
-}
-
-.alert-error {
-    -fx-background-color: #fee2e2;
-    -fx-text-fill: #991b1b;
-    -fx-border-color: #fecaca;
 }
 
 .InputField {

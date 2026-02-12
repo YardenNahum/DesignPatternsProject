@@ -21,7 +21,7 @@ public class FileManager {
 
     // class constructor
     private FileManager() {
-        this.logFile = new File("../InputFiles/Logger.txt");
+        this.logFile = new File("src/InputFiles/Logger.txt");
         configFile = new File("src/InputFiles/ConfigFile.json");
         System.out.println("FileManager constructor was called");
     }
@@ -50,6 +50,12 @@ public class FileManager {
         if (lines.isEmpty() && !configFile.exists()) {
             return "Config file not found.";
         }
+        return buildConfigMessage(lines);
+    }
+
+
+    private String buildConfigMessage(List<String> lines)
+    {
         //building a single string
         StringBuilder sb = new StringBuilder();
         for (String line : lines) {
@@ -68,8 +74,6 @@ public class FileManager {
         }
         return sb.toString();
     }
-
-
 
     // read all text from the file
     public List<String> readFile(File file)

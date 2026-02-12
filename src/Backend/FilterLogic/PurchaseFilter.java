@@ -11,6 +11,7 @@ public class PurchaseFilter
             return purchases;
         }
         Criteria criteria;
+        //Criteria Factory
         switch(type){
             case DATE:
                 criteria = new CriteriaDate(searchText);
