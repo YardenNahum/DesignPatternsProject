@@ -12,6 +12,7 @@ public class ViewAllPurchasesController {
     public void initialize()
     {
 
+
     }
 
     //Navigate to home Page
