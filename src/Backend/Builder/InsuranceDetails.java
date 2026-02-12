@@ -30,7 +30,7 @@ public class InsuranceDetails {
     // Returns a string for the insurance details
     @Override
     public String toString() {
-        return "Product{name=" + name + ", familyName='" + familyName + "', date='" + date + "', remarks='" + remarks + "',  insuranceType='" + insuranceType + '}' ;
+        return "name=" + name + ", familyName='" + familyName + "', date='" + date + "', remarks='" + remarks + "',  insuranceType='" + insuranceType + '.';
     }
 
     // Builder for the InsuranceDetails

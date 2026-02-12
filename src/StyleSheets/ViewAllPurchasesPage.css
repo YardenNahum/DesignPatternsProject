@@ -13,9 +13,9 @@
 }
 
 #SearchCriteria {
-    -fx-background-color: #f8fafc;
-    -fx-background-radius: 10;
-    -fx-border-color: #e2e8f0;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #5b95e3;
     -fx-border-radius: 10;
     -fx-padding: 5;
 }
@@ -26,10 +26,10 @@
 
 #SearchField {
     -fx-background-color: #ffffff;
-    -fx-background-radius: 10 0 0 10;
-    -fx-border-color: #e2e8f0;
-    -fx-border-radius: 10 0 0 10;
-    -fx-border-width: 1 0 1 1;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-color: #0069f8;
+    -fx-border-width: 1;
     -fx-padding: 10;
 }
 

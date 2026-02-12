@@ -3,10 +3,11 @@ package Backend.FilterLogic;
 import Backend.Builder.InsuranceDetails;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PurchaseFilter
 {
-    public static ArrayList<InsuranceDetails> filter(ArrayList<InsuranceDetails> purchases, CriteriaType type, String searchText) {
+    public static List<InsuranceDetails> filter(List<InsuranceDetails> purchases, CriteriaType type, String searchText) {
         if (type == null||type==CriteriaType.NONE) {
             return purchases;
         }
@@ -24,9 +25,11 @@ public class PurchaseFilter
                 break;
             case REMARKS:
                 criteria = new CriteriaRemarks(searchText);
+                break;
             default:
                 return purchases;
         }
         return criteria.meetCriteria(purchases);
     }
+
 }
