@@ -46,6 +46,7 @@ public class FileManager {
     }
     // read config file
     public String readConfigFile() {
+
         List<String> lines = readFile(configFile);
         if (lines.isEmpty() && !configFile.exists()) {
             return "Config file not found.";
@@ -59,14 +60,16 @@ public class FileManager {
         //building a single string
         StringBuilder sb = new StringBuilder();
         for (String line : lines) {
+
             String trimmed = line.trim();
             if (trimmed.equals("{") || trimmed.equals("}")) {
                 continue;
             }
+
             String cleanLine = trimmed
                     .replace("\"", "")
-                    .replace(",", "")
-                    .replace(":", ": ");
+                    .replace(":", ": ")
+                    .replace(",", "");
 
             if (!cleanLine.isEmpty()) {
                 sb.append(cleanLine).append("\n");
