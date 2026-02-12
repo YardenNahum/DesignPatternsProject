@@ -1,19 +1,23 @@
 package Frontend.HomePage;
 
 import Backend.HomePage.InsuranceType;
+import Backend.SingleTone.FileManager;
+import Frontend.Utils.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HomePageController extends Application {
-    private String sellPagePath = "/Frontend/InsurancePurchasePage/InsurancePage.fxml";
+    @FXML
+    private Label ConfigText;
     @Override
     public void start(Stage stage) {
         try {
@@ -30,36 +34,52 @@ public class HomePageController extends Application {
             e.printStackTrace();
         }
     }
+    @FXML
+    public void initialize() {
+        try {
+            String config = FileManager.getInstance().readConfigFile();
+            if (ConfigText != null) {
+                ConfigText.setText(config);
+            }
+            System.out.println("Config loaded successfully: " + config);
 
+        } catch (Exception e) {
+            System.err.println("Failed to load config: " + e.getMessage());
+        }
+    }
     @FXML
     private void handleCarInsurance(MouseEvent event) {
         String title = " Purchase - " + InsuranceType.CAR.toString();
-        navigateToSellPage(InsuranceType.CAR,event,sellPagePath,title);
+        navigateToSellPage(InsuranceType.CAR,event,title);
     }
     @FXML
     private void handleApartmentInsurance(MouseEvent event) {
         String title = " Purchase - " + InsuranceType.APARTMENT.toString();
-        navigateToSellPage(InsuranceType.APARTMENT,event,sellPagePath,title);
+        navigateToSellPage(InsuranceType.APARTMENT,event,title);
     }
     @FXML
     private void handleLifeInsurance(MouseEvent event) {
         String title = " Purchase - " + InsuranceType.LIFE.toString();
-        navigateToSellPage(InsuranceType.LIFE,event,sellPagePath,title);
+        navigateToSellPage(InsuranceType.LIFE,event,title);
     }
     @FXML
     private void handleHealthInsurance(MouseEvent event) {
         String title = " Purchase - " + InsuranceType.HEALTH.toString();
-        navigateToSellPage(InsuranceType.HEALTH,event,sellPagePath,title);
+        navigateToSellPage(InsuranceType.HEALTH,event,title);
     }
     @FXML
-    public void handleViewALLPurchases(MouseEvent mouseEvent) {
+    public void handleViewALLPurchases(MouseEvent mouseEvent)
+    {
+        String path = "/Frontend/ViewAllPurchasesPage/ViewAllPurchasesPage.fxml";
+        String title = "View All Purchases Page";
+        Utils.navigate(mouseEvent,path,title);
     }
 
-    private void navigateToSellPage(InsuranceType insuranceType, MouseEvent event, String pagePath, String title)
+    private void navigateToSellPage(InsuranceType insuranceType, MouseEvent event, String title)
     {
         try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(pagePath));
+            String sellPagePath = "/Frontend/InsurancePurchasePage/InsurancePage.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(sellPagePath));
             Parent root = loader.load();
             Frontend.InsurancePurchasePage.InsurancePageController controller = loader.getController();
             controller.setInsuranceType(insuranceType);

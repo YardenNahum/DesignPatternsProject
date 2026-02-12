@@ -1,5 +1,6 @@
 package Backend.SingleTone;
 
+import Backend.Builder.InsuranceDetails;
 import Backend.Purchases.PurchasesTable;
 
 import java.io.File;
@@ -14,11 +15,14 @@ public class FileManager {
 
     // Single instance
     private static FileManager _instance = null;
-    private final File file;
+    private final File logFile;
+    private final File configFile;
+
 
     // class constructor
     private FileManager() {
-        this.file = new File("FormInput.txt");
+        this.logFile = new File("src/InputFiles/Logger.txt");
+        configFile = new File("src/InputFiles/ConfigFile.json");
         System.out.println("FileManager constructor was called");
     }
 
@@ -31,24 +35,58 @@ public class FileManager {
         return _instance;
     }
 
-    // add a text to the file
-    public void AddToFile(String str) {
-        try (FileWriter writer = new FileWriter(file, true)) {
-            writer.write(str + System.lineSeparator());
+    // add log message to file
+    public void writeToLogger(String insuranceRecord)
+    {
+        try (FileWriter writer = new FileWriter(logFile, true)) {
+            writer.write(insuranceRecord + System.lineSeparator());
         } catch (IOException e) {
-            throw new RuntimeException("Failed to write to file: " + file.getName(), e);
+            throw new RuntimeException("Failed to write to file: " + logFile.getName(), e);
         }
+    }
+    // read config file
+    public String readConfigFile() {
+        List<String> lines = readFile(configFile);
+        if (lines.isEmpty() && !configFile.exists()) {
+            return "Config file not found.";
+        }
+        return buildConfigMessage(lines);
+    }
+
+
+    private String buildConfigMessage(List<String> lines)
+    {
+        //building a single string
+        StringBuilder sb = new StringBuilder();
+        for (String line : lines) {
+            String trimmed = line.trim();
+            if (trimmed.equals("{") || trimmed.equals("}")) {
+                continue;
+            }
+            String cleanLine = trimmed
+                    .replace("\"", "")
+                    .replace(",", "")
+                    .replace(":", ": ");
+
+            if (!cleanLine.isEmpty()) {
+                sb.append(cleanLine).append("\n");
+            }
+        }
+        return sb.toString();
     }
 
     // read all text from the file
-    public List<String> readFile() {
+    public List<String> readFile(File file)
+    {
         if (!file.exists()) {
             return Collections.emptyList();
         }
 
-        try (Scanner scanner = new Scanner(file)) {
+        try (Scanner scanner = new Scanner(file))
+        {
             List<String> lines = new java.util.ArrayList<>();
-            while (scanner.hasNextLine()) {
+            while (scanner.hasNextLine())
+            {
                 lines.add(scanner.nextLine());
             }
             return lines;
@@ -58,7 +96,7 @@ public class FileManager {
     }
 
     // View All Purchases in the PurchasesTable
-    public List<PurchasesTable> addToPurchasesTable() {
+    /*public List<InsuranceDetails> addToPurchasesTable() {
 
         List<String> lines = readFile();  // read all text from the file
         List<PurchasesTable> tableRows = new ArrayList<>();
@@ -77,6 +115,6 @@ public class FileManager {
         }
 
         return tableRows;
-    }
+    }*/
 
 }

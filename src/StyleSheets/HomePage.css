@@ -77,9 +77,12 @@
 /*View all purchases style*/
 #PurchasesButton {
     -fx-background-color: #059669;
-    -fx-font-size: 1.3em;
+    -fx-font-size: 1em;
     -fx-max-width: 500;
     -fx-min-width: 300;
+    -fx-max-height: 500;
+    -fx-min-height: 30;
+    -fx-text-fill: white;
     -fx-padding: 15 65;
     -fx-background-radius: 15;
     -fx-effect: dropshadow(three-pass-box, rgba(5, 150, 105, 0.3), 15, 0, 0, 6);
@@ -93,14 +96,16 @@
 
 #ConfigurationText {
     -fx-font-family: "Consolas", "Monospaced";
-    -fx-font-size: 1.3em;
+    -fx-font-size: 1em;
     -fx-text-fill: #64748b;
+    -fx-wrap-text: true;
     -fx-padding: 15;
     -fx-background-color: #f8fafc;
     -fx-background-radius: 15;
     -fx-border-color: #e2e8f0;
     -fx-border-width: 1;
     -fx-border-radius: 15;
+    -fx-alignment: TOP_LEFT;
 }
 
 .Icon {
@@ -123,15 +128,21 @@
     -fx-image: url("../Images/HomePage/HealthCare.png");
 }
 
-
-.alert-success {
-    -fx-background-color: #dcfce7;
-    -fx-text-fill: #166534;
-    -fx-border-color: #bbf7d0;
+.InputField {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 10;
+    -fx-padding: 10 15;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 15px;
+    -fx-text-fill: #1e293b;
+    -fx-prompt-text-fill: #94a3b8;
 }
 
-.alert-error {
-    -fx-background-color: #fee2e2;
-    -fx-text-fill: #991b1b;
-    -fx-border-color: #fecaca;
+.InputField:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #4f46e5;
+    -fx-effect: dropshadow(three-pass-box, rgba(79, 70, 229, 0.1), 10, 0, 0, 0);
 }
