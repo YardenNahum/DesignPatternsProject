@@ -14,8 +14,8 @@ public class CriteriaFirstName implements Criteria
     }
 
     @Override
-    public ArrayList<InsuranceDetails> meetCriteria(ArrayList<InsuranceDetails> purchases) {
-        ArrayList<InsuranceDetails> purchasesResult =new ArrayList<>();
+    public List<InsuranceDetails> meetCriteria(List<InsuranceDetails> purchases) {
+        List<InsuranceDetails> purchasesResult =new ArrayList<>();
         if (searchText == null || searchText.isEmpty()) {
             return purchases;
 

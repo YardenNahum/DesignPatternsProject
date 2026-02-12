@@ -3,6 +3,7 @@ package Frontend.InsurancePurchasePage;
 
 import Backend.Builder.InsuranceDetails;
 import Backend.HomePage.InsuranceType;
+import Backend.ObserverLogic.PurchaseDataManager;
 import Backend.SingleTone.FileManager;
 
 import Frontend.Utils.Utils;
@@ -42,24 +43,30 @@ public class InsurancePageController {
     @FXML
     public void HandleSaveForm(MouseEvent mouseEvent) {
         //check for missing Input
-        if (validateFields())
+        if (!validateFields())
         {
             showAlert("Error: Please fill in all required fields!", "alert-error");
         }
         //Add the form input to the file using SingleTone
         else
         {
-            InsuranceDetails insurance = new InsuranceDetails.Builder()
-                    .name(NameInput.getText())
-                    .familyName(FamilyNameInput.getText())
-                    .date(DateInput.getValue().toString())
-                    .remarks(RemarksInput.getText())
-                    .insuranceType(this.insuranceType) // שימוש ב-Enum הקיים בקונטרולר
-                    .build();
-            FileManager.getInstance().writeToLogger(insurance.toString());
+            saveInsurance();
             showAlert("Success! Your " + insuranceType + " policy has been saved.", "alert-success");
             HandleRefreshForm(mouseEvent);
         }
+    }
+    //Save Insurance
+    private void saveInsurance()
+    {
+        InsuranceDetails insurance = new InsuranceDetails.Builder()
+                .name(NameInput.getText())
+                .familyName(FamilyNameInput.getText())
+                .date(DateInput.getValue().toString())
+                .remarks(RemarksInput.getText())
+                .insuranceType(this.insuranceType)
+                .build();
+        FileManager.getInstance().writeToLogger(insurance.toString());
+        PurchaseDataManager.GetInstance().addPurchase(insurance);
     }
 
     /**
@@ -99,7 +106,7 @@ public class InsurancePageController {
     /**
      * Checks if the date is in a correct format
      * **/
-    public static boolean isValidDateFormat(LocalDate date) {
+    public boolean isValidDateFormat(LocalDate date) {
         //if its null return false
         if (date == null||date.toString().isEmpty()) {
             return false;
