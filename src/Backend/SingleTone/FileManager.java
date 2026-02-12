@@ -52,7 +52,7 @@ public class FileManager {
         return buildConfigMessage(lines);
     }
 
-
+    // Builds config text
     private String buildConfigMessage(List<String> lines)
     {
         //building a single string

@@ -13,13 +13,14 @@ public class PurchaseDataManager {
 
     private PurchaseDataManager() {}
 
+    // return the singleton instance
     public static synchronized PurchaseDataManager GetInstance() {
         if (instance == null) {
             instance = new PurchaseDataManager();
         }
         return instance;
     }
-        //get all purchases
+    //get all purchases
     public List<InsuranceDetails> getAllPurchases() {
         return new ArrayList<>(purchases);
     }
