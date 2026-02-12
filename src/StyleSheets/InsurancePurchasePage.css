@@ -74,6 +74,22 @@
 #RefreshBtn:hover {
     -fx-background-color: #f5f3ff;
 }
+
+#ConfigurationText {
+    -fx-font-family: "Consolas", "Monospaced";
+    -fx-font-size: 1em;
+    -fx-text-fill: #64748b;
+    -fx-wrap-text: true;
+    -fx-text-overrun: clip;
+    -fx-padding: 15;
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 15;
+    -fx-border-color: #e2e8f0;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+    -fx-alignment: TOP_LEFT;
+}
+
 .alert-success {
     -fx-background-color: #dcfce7;
     -fx-text-fill: #166534;
