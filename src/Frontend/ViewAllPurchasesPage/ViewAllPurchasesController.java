@@ -1,6 +1,7 @@
 package Frontend.ViewAllPurchasesPage;
 
 import Backend.Builder.InsuranceDetails;
+import Backend.ConfigurationManager.ConfigurationManager;
 import Backend.FilterLogic.CriteriaType;
 import Backend.FilterLogic.PurchaseFilter;
 import Backend.ObserverLogic.PurchaseConcreteObserver;
@@ -57,17 +58,9 @@ public class ViewAllPurchasesController {
     //set Config text
     private void setConfig()
     {
-        try {
-            String config = FileManager.getInstance().readConfigFile();
-            if (ConfigText != null) {
-                ConfigText.setText(config);
-            }
-            System.out.println("Config loaded successfully: " + config);
-
-        } catch (Exception e) {
-            System.err.println("Failed to load config: " + e.getMessage());
+        if(ConfigText!=null){
+            ConfigText.setText(ConfigurationManager.getInstance().GetConfigurationText());
         }
-
     }
 
     //Navigate to home Page

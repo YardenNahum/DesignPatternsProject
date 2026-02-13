@@ -2,6 +2,7 @@ package Frontend.InsurancePurchasePage;
 
 
 import Backend.Builder.InsuranceDetails;
+import Backend.ConfigurationManager.ConfigurationManager;
 import Backend.HomePage.InsuranceType;
 import Backend.ObserverLogic.PurchaseDataManager;
 import Backend.SingleTone.FileManager;
@@ -45,17 +46,9 @@ public class InsurancePageController {
     //set Config text
     private void setConfig()
     {
-        try {
-            String config = FileManager.getInstance().readConfigFile();
-            if (ConfigText != null) {
-                ConfigText.setText(config);
-            }
-            System.out.println("Config loaded successfully: " + config);
-
-        } catch (Exception e) {
-            System.err.println("Failed to load config: " + e.getMessage());
+        if(ConfigText!=null){
+            ConfigText.setText(ConfigurationManager.getInstance().GetConfigurationText());
         }
-
     }
 
 

@@ -1,5 +1,6 @@
 package Frontend.HomePage;
 
+import Backend.ConfigurationManager.ConfigurationManager;
 import Backend.HomePage.InsuranceType;
 import Backend.ObserverLogic.PurchaseConcreteObserver;
 import Backend.ObserverLogic.PurchaseDataManager;
@@ -20,7 +21,6 @@ import java.io.IOException;
 public class HomePageController extends Application {
     @FXML private Label ConfigText;
     private static PurchaseConcreteObserver PurchaseObserver;
-
     @Override
     public void start(Stage stage) {
         try {
@@ -49,17 +49,9 @@ public class HomePageController extends Application {
     //set Config text
     private void setConfig()
     {
-        try {
-            String config = FileManager.getInstance().readConfigFile();
-            if (ConfigText != null) {
-                ConfigText.setText(config);
-            }
-            System.out.println("Config loaded successfully: " + config);
-
-        } catch (Exception e) {
-            System.err.println("Failed to load config: " + e.getMessage());
+        if(ConfigText!=null){
+            ConfigText.setText(ConfigurationManager.getInstance().GetConfigurationText());
         }
-
     }
     @FXML
     private void handleCarInsurance(MouseEvent event) {
