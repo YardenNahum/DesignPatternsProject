@@ -14,3 +14,4 @@ name=omri, familyName='spitzer', date='2026-02-19', remarks='fdfds',  insuranceT
 name=Yarden, familyName='Nahum', date='2000-02-02', remarks='fdfs',  insuranceType='Apartment Insurance.
 name=Yarden, familyName='Nahum', date='2026-03-03', remarks='Love',  insuranceType='Apartment Insurance.
 name=Adan, familyName='Ib', date='2026-12-05', remarks='vcvx',  insuranceType='Health Insurance.
+name=dana, familyName='fdsfs', date='2026-02-12', remarks='dsada',  insuranceType='Health Insurance.

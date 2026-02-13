@@ -25,6 +25,7 @@ public class PurchaseFilter
                 break;
             case REMARKS:
                 criteria = new CriteriaRemarks(searchText);
+                break;
             default:
                 return purchases;
         }
