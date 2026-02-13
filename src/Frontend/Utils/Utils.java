@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 
+//a class for page navigation
 public class Utils {
 
     public static void navigate(MouseEvent event, String path, String title) {

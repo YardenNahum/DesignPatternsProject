@@ -40,10 +40,11 @@ public class HomePageController extends Application {
             e.printStackTrace();
         }
     }
+
     @FXML
     public void initialize() {
         setConfig();
-    }
+    }  // load config on start
 
     //set Config text
     private void setConfig()
@@ -88,12 +89,15 @@ public class HomePageController extends Application {
         Utils.navigate(mouseEvent,path,title);
     }
 
+    //insurance purchase page
     private void navigateToSellPage(InsuranceType insuranceType, MouseEvent event, String title)
     {
         try {
             String sellPagePath = "/Frontend/InsurancePurchasePage/InsurancePage.fxml";
             FXMLLoader loader = new FXMLLoader(getClass().getResource(sellPagePath));
             Parent root = loader.load();
+
+            // Set insurance type
             Frontend.InsurancePurchasePage.InsurancePageController controller = loader.getController();
             controller.setInsuranceType(insuranceType);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -106,6 +110,7 @@ public class HomePageController extends Application {
             e.printStackTrace();
         }
     }
+    // Returns purchase observer
     public static PurchaseConcreteObserver getPurchaseObserver() {
         return PurchaseObserver;
     }

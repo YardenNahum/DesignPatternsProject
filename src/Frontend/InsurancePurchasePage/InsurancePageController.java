@@ -58,10 +58,8 @@ public class InsurancePageController {
 
     }
 
-    /**
-     * saves the purchase and logs it
-     *
-     * **/
+
+     //saves the purchase and logs it
     @FXML
     public void HandleSaveForm(MouseEvent mouseEvent) {
         //check for missing Input
@@ -91,10 +89,8 @@ public class InsurancePageController {
         PurchaseDataManager.GetInstance().addPurchase(insurance);
     }
 
-    /**
-     * Validate the fields of the form
-     * returns true if the user filled all otherwise false
-     * **/
+    // Validate the fields of the form
+    // returns true if the user filled all otherwise false
     private boolean validateFields()
     {
         if(NameInput.getText().isEmpty() || FamilyNameInput.getText().isEmpty() || DateInput.getValue()==null||isValidDateFormat(DateInput.getValue()))
@@ -104,6 +100,7 @@ public class InsurancePageController {
         return true;
     }
 
+    //show alert text when needed
     private void showAlert(String message, String styleClass) {
         AlertText.setText(message);
         AlertText.getStyleClass().removeAll("alert-success", "alert-error");
@@ -119,15 +116,15 @@ public class InsurancePageController {
         RemarksInput.setText("");
     }
 
+    //MouseEvent for handling Back to previous page
     @FXML
     public void HandleGoBackToPreviousPage(MouseEvent mouseEvent)
     {
         Utils.navigate(mouseEvent, "/Frontend/HomePage/HomePage.fxml", "Insurance Company Management");
     }
 
-    /**
-     * Checks if the date is in a correct format
-     * **/
+
+    //Checks if the date is in a correct format
     public boolean isValidDateFormat(LocalDate date) {
         //if its null return false
         if (date == null||date.toString().isEmpty()) {

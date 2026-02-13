@@ -3,7 +3,6 @@ package Backend.FilterLogic;
 import Backend.Builder.InsuranceDetails;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CriteriaRemarks implements Criteria
 {
@@ -14,14 +13,13 @@ public class CriteriaRemarks implements Criteria
     }
 
     @Override
-    public List<InsuranceDetails> meetCriteria(List<InsuranceDetails> purchases) {
-        List<InsuranceDetails> purchasesResult =new ArrayList<>();
+    public ArrayList<InsuranceDetails> meetCriteria(ArrayList<InsuranceDetails> purchases) {
+        ArrayList<InsuranceDetails> purchasesResult =new ArrayList<>();
         if (searchText == null || searchText.isEmpty()) {
             return purchases;
 
         }
         //Search for all the purchases that contains the search text in their remarks field
-
         for(InsuranceDetails purchase: purchases)
         {
             if(purchase.getRemarks().toLowerCase().contains(searchText))
