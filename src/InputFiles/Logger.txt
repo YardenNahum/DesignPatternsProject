@@ -11,3 +11,4 @@ name=Yarden, familyName='Nahum', date='2025-02-05', remarks='Sick',  insuranceTy
 name=Yarden, familyName='Nahum', date='2026-02-11', remarks='remarks',  insuranceType='Car Insurance.
 name=Adan, familyName='Ibrahim', date='2026-02-05', remarks='fdsfds',  insuranceType='Life Insurance.
 name=omri, familyName='spitzer', date='2026-02-19', remarks='fdfds',  insuranceType='Life Insurance.
+name=Yarden, familyName='Nahum', date='2000-02-02', remarks='fdfs',  insuranceType='Apartment Insurance.

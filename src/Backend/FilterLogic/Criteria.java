@@ -9,6 +9,4 @@ import java.util.List;
 public interface Criteria
 {
     List<InsuranceDetails> meetCriteria(List<InsuranceDetails> purchases);
-
-    ArrayList<InsuranceDetails> meetCriteria(ArrayList<InsuranceDetails> purchases);
 }

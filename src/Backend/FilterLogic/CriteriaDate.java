@@ -3,6 +3,7 @@ package Backend.FilterLogic;
 import Backend.Builder.InsuranceDetails;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CriteriaDate implements Criteria
 {
@@ -13,7 +14,7 @@ public class CriteriaDate implements Criteria
     }
 
     @Override
-    public ArrayList<InsuranceDetails> meetCriteria(ArrayList<InsuranceDetails> purchases) {
+    public List<InsuranceDetails> meetCriteria(List<InsuranceDetails> purchases) {
         ArrayList<InsuranceDetails> purchasesResult =new ArrayList<>();
         if (searchText == null || searchText.isEmpty()) {
             return purchases;
