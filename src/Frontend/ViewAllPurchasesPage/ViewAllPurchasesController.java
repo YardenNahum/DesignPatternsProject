@@ -5,8 +5,6 @@ import Backend.ConfigurationManager.ConfigurationManager;
 import Backend.FilterLogic.CriteriaType;
 import Backend.FilterLogic.PurchaseFilter;
 import Backend.ObserverLogic.PurchaseConcreteObserver;
-import Backend.SingleTone.FileManager;
-import Frontend.HomePage.HomePageController;
 import Frontend.Utils.AppManager;
 import Frontend.Utils.Utils;
 import javafx.collections.FXCollections;
