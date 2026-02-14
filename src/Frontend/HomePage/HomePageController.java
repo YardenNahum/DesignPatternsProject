@@ -5,6 +5,7 @@ import Backend.HomePage.InsuranceType;
 import Backend.ObserverLogic.PurchaseConcreteObserver;
 import Backend.ObserverLogic.PurchaseDataManager;
 import Backend.SingleTone.FileManager;
+import Frontend.Utils.AppManager;
 import Frontend.Utils.Utils;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -20,13 +21,13 @@ import java.io.IOException;
 
 public class HomePageController extends Application {
     @FXML private Label ConfigText;
-    private static PurchaseConcreteObserver PurchaseObserver;
     @Override
     public void start(Stage stage) {
         try {
             //Start the Observer For Purchases
             PurchaseDataManager dataManager = PurchaseDataManager.GetInstance();
-            PurchaseObserver = new PurchaseConcreteObserver(dataManager);
+            // set purchases observer in app manager to listen to purchases
+             AppManager.setPurchaseObserver(new PurchaseConcreteObserver(dataManager));
             //Load HomePage FXML
             Parent root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             Scene scene = new Scene(root);
@@ -102,11 +103,6 @@ public class HomePageController extends Application {
             e.printStackTrace();
         }
     }
-    // Returns purchase observer
-    public static PurchaseConcreteObserver getPurchaseObserver() {
-        return PurchaseObserver;
-    }
-
 
 
 }

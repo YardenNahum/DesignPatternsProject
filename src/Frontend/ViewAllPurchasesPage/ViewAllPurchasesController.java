@@ -7,6 +7,7 @@ import Backend.FilterLogic.PurchaseFilter;
 import Backend.ObserverLogic.PurchaseConcreteObserver;
 import Backend.SingleTone.FileManager;
 import Frontend.HomePage.HomePageController;
+import Frontend.Utils.AppManager;
 import Frontend.Utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -34,7 +35,7 @@ public class ViewAllPurchasesController {
     {
         setConfig();
         //Subscribe to observer
-        this.observer = HomePageController.getPurchaseObserver();
+        this.observer = AppManager.getPurchaseObserver();
         if (this.observer != null)
         {
             this.observer.setController(this);
